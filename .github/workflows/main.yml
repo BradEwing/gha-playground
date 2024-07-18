@@ -1,4 +1,13 @@
-on: [push]
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+  workflow_dispatch:
 
 jobs:
   hello_world_job:
@@ -7,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - id: foo
-        uses: ./action.yml
+        uses: ./.github/actions/action.yml
         with:
           who-to-greet: 'Mona the Octocat'
       - run: echo random-number "$RANDOM_NUMBER"
