@@ -30,5 +30,5 @@ runs:
         GITHUB_ACTION_PATH: ${{ github.action_path }}
 
     - name: Run goodbye.sh
-      run: ./.github/actions/goodbye.sh
+      run: ./.github/scripts/goodbye.sh
       shell: bash
